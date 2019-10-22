@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
 body {
-  text-align: center;
-  margin: auto;
-  background: #3498DB;
+    text-align: center;
+    background: rgb(57,84,107);
+    background: linear-gradient(90deg, rgba(57,84,107,1) 0%, rgba(40,62,81,1) 100%);
+
 }
 
-#startup {
-    font-family: "Josefin Sans";
-    font-style: normal;
-    font-weight: 900;
-    font-size: 64px;
-    line-height: 75px;
-    text-transform: uppercase;
-    color: #FFFFFF;
+h2 {
+    color: rgb(57,84,107);
+    font-size: 50px;
+    font-family: "Josefin Sans", Roboto;
+    height: 1px;
 }
-

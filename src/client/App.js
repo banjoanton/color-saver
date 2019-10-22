@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
+import StartPage from './components/StartPage';
+import UserPage from './components/UserPage';
+
 import './app.css';
 
-const App = (props) => {
-    const state = useState('Hello world');
+const App = () => {
+  const [user, setUser] = useState(null);
 
-    return (<h1 id="startup">{state}</h1>
-    );
+  if (user) {
+    return <div><UserPage user={user} /></div>;
+  }
+
+  return (
+    <div>
+      <StartPage setUser={setUser} />
+    </div>
+  );
 };
 
 export default App;
