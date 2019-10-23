@@ -8,8 +8,64 @@ body {
 }
 
 h2 {
-    color: rgb(57,84,107);
+    color: rgb(33, 46, 58);
     font-size: 50px;
     font-family: "Josefin Sans", Roboto;
     height: 1px;
+}
+
+.container {
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    background:#ffffff;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -100px 0 0 -150px;
+
+    min-height: 200px;
+    min-width: 300px;
+    width: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    box-sizing: border-box;
+}
+
+/* start page */
+.start-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+
+/* color page */
+.color {
+    height: 50px;
+    background-color: rgb(33, 46, 58);
+    width: 280px;
+
+    color: white;
+    text-align: left;
+}
+
+.color-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+.color-box {
+    border-radius: 5px;
+    margin: 10px 0 0 0;
+    overflow: hidden;
 }

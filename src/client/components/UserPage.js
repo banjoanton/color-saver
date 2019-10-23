@@ -1,49 +1,34 @@
 import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Color from './Color';
 
 const UserPage = ({ user }) => {
-  console.log('UserPage');
-
+  // override css
   const parent = {
-    borderRadius: '25px',
-    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)',
-    background: '#ffffff',
-
-    minWidth: '300px',
-    width: '300px',
     minHeight: '100px',
-
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-
-    position: 'absolute',
-    left: '50%',
-    top: '50%',
-    margin: '-100px 0 0 -150px'
-
   };
 
-  const child = {
-    width: '300px',
-    height: '20px',
-    margin: '10px'
+  // handle adding a new color
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    //TODO: add new color
+    console.log('submit');
   };
 
   return (
-    <div style={parent}>
-      <div style={child}>
-        add input here
+    <div style={parent} className="container">
+
+      <div className="color-box">
+        <Color color="gray" />
+        <Color color="purple" />
       </div>
-      <div style={child}>
-        add input there
-      </div>
-      <div style={child}>
-        add input fler
-      </div>
-      <div style={child}>
-        add input mere
-      </div>
+
+      <form className="color-input" onSubmit={handleSubmit}>
+        <TextField type="text" name="color" label="Color" id="color-input" />
+        <Button type="submit" variant="outlined">Add</Button>
+      </form>
+
     </div>
   );
 };

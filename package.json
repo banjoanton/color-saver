@@ -1,7 +1,7 @@
 {
-    "name": "react-template",
+    "name": "Colors",
     "version": "1.0.0",
-    "description": "Template for a react app with node backend.",
+    "description": "Save your favorite colors.",
     "main": "src/server/index.js",
     "scripts": {
         "build": "webpack --mode production",
@@ -22,7 +22,8 @@
         "helmet": "^3.21.2",
         "mongoose": "^5.7.6",
         "react": "16.10.2",
-        "react-dom": "16.10.2"
+        "react-dom": "16.10.2",
+        "react-router-dom": "^5.1.2"
     },
     "devDependencies": {
         "@babel/core": "^7.0.0",
