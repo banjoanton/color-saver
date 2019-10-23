@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const Color = ({ color }) => {
+  // override CSS color
   const style = {
     backgroundColor: color
   };
