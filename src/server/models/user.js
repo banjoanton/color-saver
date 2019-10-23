@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 
-// MongoDB Example
-
 // Define schema
 const userSchema = mongoose.Schema({
-    username: String,
-    passwordHash: String
+  user: { type: String, required: true },
+  colors: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Color'
+  }
 });
 
 /*eslint-disable */
