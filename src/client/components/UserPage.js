@@ -12,7 +12,7 @@ const UserPage = ({ user }) => {
   // handle adding a new color
   const handleSubmit = (event) => {
     event.preventDefault();
-    //TODO: add new color
+    // TODO: add new color
     console.log('submit');
   };
 
@@ -22,6 +22,7 @@ const UserPage = ({ user }) => {
       <div className="color-box">
         <Color color="gray" />
         <Color color="purple" />
+        <Color color="pink" />
       </div>
 
       <form className="color-input" onSubmit={handleSubmit}>

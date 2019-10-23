@@ -7,7 +7,7 @@ const Color = ({ color }) => {
   };
 
   return (
-    <div style={style} className="color" />
+    <div role="presentation" onClick={() => console.log(color)} style={style} className="color" />
   );
 };
 
