@@ -1,11 +1,15 @@
 const apiRouter = require('express').Router();
 const User = require('../models/user');
 
-apiRouter.get('/hello', (req, res) => res.send({ hello: 'world' }));
+apiRouter.get('/users/:user', async (request, response, next) => {
+  const { user } = request.params;
 
-apiRouter.get('/user', async (request, response) => {
-    const users = await User.find({});
-    response.json(users.map(user => user.toJSON()));
+  try {
+    const downloadedUser = await User.findOne({ user });
+    response.json(downloadedUser.toJSON());
+  } catch (exception) {
+    next(exception);
+  }
 });
 
 module.exports = apiRouter;
