@@ -1,24 +1,29 @@
-const apiRouter = require('express').Router();
+const userRouter = require('express').Router();
 const User = require('../models/user');
 
-apiRouter.get('/users/:user', async (request, response, next) => {
+userRouter.get('/users/:user', async (request, response, next) => {
   const { user } = request.params;
 
   try {
-    const downloadedUser = await User.findOne({ user }).populate('color');
+    const downloadedUser = await User.findOne({ user }).populate('colors');
 
     // return error if null
     if (downloadedUser === null) {
       response.status(404).json({ error: 'user does not exists' });
       return;
     }
-    response.json(downloadedUser.toJSON());
+    response.json(downloadedUser);
   } catch (exception) {
     next(exception);
   }
 });
 
-apiRouter.post('/users', async (request, response, next) => {
+userRouter.get('/users', async (request, response, next) => {
+  const users = await User.find({}).populate('color');
+  response.json(users.map((u) => u.toJSON()));
+});
+
+userRouter.post('/users', async (request, response, next) => {
   const { body } = request;
 
   try {
@@ -35,4 +40,4 @@ apiRouter.post('/users', async (request, response, next) => {
   }
 });
 
-module.exports = apiRouter;
+module.exports = userRouter;

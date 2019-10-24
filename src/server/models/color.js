@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Define schema
 const colorSchema = mongoose.Schema({
-  color: { type: String, required: true },
+  color: String,
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'

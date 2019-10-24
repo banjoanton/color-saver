@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 // Define schema
 const userSchema = mongoose.Schema({
   user: { type: String, required: true },
-  colors: {
+  colors: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Color'
-  }
+  }]
 });
 
 /*eslint-disable */

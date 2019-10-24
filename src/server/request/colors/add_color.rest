@@ -1,0 +1,7 @@
+POST http://localhost:3000/api/colors
+Content-Type: application/json
+
+{
+  "color": "red",
+  "user": "123"
+}
