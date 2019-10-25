@@ -7,6 +7,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import ColorBox from './ColorBox';
 
 import userService from '../services/userService';
+import colorService from '../services/colorService';
 
 const Color = require('color');
 
@@ -45,15 +46,17 @@ const UserPage = ({ user }) => {
       console.log('TCL: -------------------------------------------');
     } catch (exception) {
       console.log(exception);
-      // return if it isnt a color
+      // return if it isnt a color. Will not proceed below.
       return;
     }
 
-
     // TODO: add new color
-
+    // update colors locally
     setColors([...colors, colorClass]);
     event.target.color.value = '';
+
+    // add to database
+    colorService.addColor(colorClass, user);
   };
 
   return (
