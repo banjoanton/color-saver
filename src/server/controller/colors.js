@@ -30,8 +30,12 @@ colorRouter.post('/colors', async (request, response, next) => {
 });
 
 colorRouter.get('/colors', async (request, response, next) => {
-  const colors = await Color.find({}).populate('user');
-  response.json(colors.map((u) => u.toJSON()));
+  try {
+    const colors = await Color.find({}).populate('user');
+    response.json(colors.map((u) => u.toJSON()));
+  } catch (exception) {
+    next(exception);
+  }
 });
 
 module.exports = colorRouter;
