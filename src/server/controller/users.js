@@ -19,8 +19,12 @@ userRouter.get('/users/:user', async (request, response, next) => {
 });
 
 userRouter.get('/users', async (request, response, next) => {
-  const users = await User.find({}).populate('color');
-  response.json(users.map((u) => u.toJSON()));
+  try {
+    const users = await User.find({}).populate('colors');
+    response.json(users.map((u) => u.toJSON()));
+  } catch (exception) {
+    next(exception);
+  }
 });
 
 userRouter.post('/users', async (request, response, next) => {
