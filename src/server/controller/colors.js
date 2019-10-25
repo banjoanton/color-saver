@@ -9,6 +9,7 @@ colorRouter.post('/colors', async (request, response, next) => {
     // get user
     const user = await User.findOne({ user: body.user });
 
+
     // create color
     const newColor = new Color({
       color: body.color,

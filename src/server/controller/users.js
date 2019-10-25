@@ -9,7 +9,7 @@ userRouter.get('/users/:user', async (request, response, next) => {
 
     // return error if null
     if (downloadedUser === null) {
-      response.status(404).json({ error: 'user does not exists' });
+      response.status(204).json({ info: 'user does not exists' });
       return;
     }
     response.json(downloadedUser);

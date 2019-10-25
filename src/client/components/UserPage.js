@@ -18,7 +18,20 @@ const UserPage = ({ user }) => {
   // get colors for user
   useEffect(() => {
     async function fetchData() {
-      const downloadedUser = await userService.getUser(user);
+      // get all users
+      const allUsers = await userService.getUsers();
+      console.log('TCL: ------------------------------------');
+      console.log('TCL: fetchData -> allUsers', allUsers);
+      console.log('TCL: ------------------------------------');
+
+      // if user does not exist, leave colors empty
+      if (!allUsers.map((u) => u.user).includes(user)) {
+        setHasMadeQuery(true);
+        return;
+      }
+
+      // if the user exists, fetch all colors from the server
+      const downloadedUser = allUsers.find((u) => u.user === user);
       const userColors = downloadedUser.colors.map((colorArray) => colorArray.color);
       setColors(userColors);
       setHasMadeQuery(true);
