@@ -3,24 +3,16 @@ import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import Color from './Color';
+import ColorBox from './ColorBox';
 
-import userService from '../services/users';
+import userService from '../services/userService';
 
 const UserPage = ({ user }) => {
-  const [colors, setColors] = useState(['blue', 'green', 'pink']);
+  const [colors, setColors] = useState([]);
   // override css
   const parent = {
     minHeight: '100px',
   };
-
-  // get user data
-  // const colorsExample = userService.getUser(user);
-
-  // itterate over colors
-  const allColors = colors.map((color, index) => (
-    <Color key={index} color={color} />
-  ));
 
   // handle adding a new color
   const handleSubmit = (event) => {
@@ -34,9 +26,9 @@ const UserPage = ({ user }) => {
   return (
     <div style={parent} className="container">
 
-      <div className="color-box">
-        {allColors}
-      </div>
+      <h3>{user}</h3>
+
+      {colors.length > 0 ? <ColorBox colors={colors} /> : (<p>hello</p>)}
 
       <form className="color-input" onSubmit={handleSubmit}>
         <TextField type="text" name="color" label="Color" id="color-input" />
