@@ -21,7 +21,12 @@ const Color = ({ color }) => {
 
   // handle click
   const handleClick = (event) => {
-    console.log(color);
+    console.log('TCL: --------------------------------');
+    console.log('TCL: handleClick -> color', color);
+    console.log('TCL: --------------------------------');
+
+    // copy to clipboard
+    navigator.clipboard.writeText(color);
   };
 
 
