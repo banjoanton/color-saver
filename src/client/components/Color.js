@@ -11,7 +11,7 @@ const Color = ({ color }) => {
 
   // override CSS color
   const style = {
-    backgroundColor: color,
+    backgroundColor: colorClass.hex(),
   };
 
   // override CSS when hovering
