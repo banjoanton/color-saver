@@ -70,7 +70,7 @@ h3 {
 
   font-family: "Josefin Sans", Roboto;
   font-size: 16px;
-
+  cursor: default;
 }
 
 .color-input {

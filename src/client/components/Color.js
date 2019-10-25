@@ -19,9 +19,14 @@ const Color = ({ color }) => {
     backgroundColor: colorClass.darken(0.7)
   };
 
+  // handle click
+  const handleClick = (event) => {
+    console.log(color);
+  };
+
 
   return (
-    <div role="presentation" {...hoverProps} onClick={() => console.log(color)} style={isHovering ? hoverStyle : style} className="color">
+    <div role="presentation" {...hoverProps} onClick={handleClick} style={isHovering ? hoverStyle : style} className="color">
       {isHovering ? <p id="in-color-text">COPY</p> : null}
     </div>
   );
