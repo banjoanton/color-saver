@@ -7,8 +7,16 @@ colorRouter.post('/colors', async (request, response, next) => {
 
   try {
     // get user
-    const user = await User.findOne({ user: body.user });
+    let user = await User.findOne({ user: body.user });
 
+    // if user does not exist, create it
+    if (user === null) {
+      const newUser = new User({
+        user: body.user
+      });
+
+      user = await newUser.save();
+    }
 
     // create color
     const newColor = new Color({

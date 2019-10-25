@@ -54,9 +54,6 @@ const UserPage = ({ user }) => {
     try {
       // save as a color class, hex value.
       colorClass = Color(color).hex();
-      console.log('TCL: -------------------------------------------');
-      console.log('TCL: handleSubmit -> colorClass', colorClass);
-      console.log('TCL: -------------------------------------------');
     } catch (exception) {
       console.log(exception);
       // return if it isnt a color. Will not proceed below.
