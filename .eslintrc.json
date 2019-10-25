@@ -20,7 +20,8 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-one-expression-per-line": "off",
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "react/jsx-props-no-spreading": "off"
 
   }
 }
