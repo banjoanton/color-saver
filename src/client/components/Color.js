@@ -1,23 +1,21 @@
 import React from 'react';
-import useHover from 'react-use-hover';
+import styled from 'styled-components';
 
 const ColorClass = require('color');
 
 
 const Color = ({ color }) => {
-  const [isHovering, hoverProps] = useHover();
   // get class for color
   const colorClass = ColorClass(color);
 
-  // override CSS color
-  const style = {
-    backgroundColor: colorClass.hex(),
-  };
-
-  // override CSS when hovering
-  const hoverStyle = {
-    backgroundColor: colorClass.darken(0.7)
-  };
+  // create styled div
+  const ColorButton = styled.div`
+    background-color: ${colorClass.hex()};
+    color: ${colorClass.hex()};
+          &:hover {
+            background-color: ${colorClass.darken(0.7).hex()};
+            color: white;
+  `;
 
   // handle click
   const handleClick = (event) => {
@@ -31,9 +29,9 @@ const Color = ({ color }) => {
 
 
   return (
-    <div role="presentation" {...hoverProps} onClick={handleClick} style={isHovering ? hoverStyle : style} className="color">
-      {isHovering ? <p id="in-color-text">COPY</p> : null}
-    </div>
+    <ColorButton role="presentation" onClick={handleClick} className="color">
+      <p id="in-color-text">COPY</p>
+    </ColorButton>
   );
 };
 
