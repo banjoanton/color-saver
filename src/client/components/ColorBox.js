@@ -4,7 +4,9 @@ import Color from './Color';
 
 
 const ColorBox = ({ colors }) => {
-  console.log(colors);
+  console.log('TCL: -------------------------------');
+  console.log('TCL: ColorBox -> colors', colors);
+  console.log('TCL: -------------------------------');
 
   // turn all colors to html elements
   const allColors = colors.map((color, index) => (

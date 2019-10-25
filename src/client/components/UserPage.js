@@ -8,6 +8,8 @@ import ColorBox from './ColorBox';
 
 import userService from '../services/userService';
 
+const Color = require('color');
+
 const UserPage = ({ user }) => {
   const [colors, setColors] = useState([]);
   const [hasMadeQuery, setHasMadeQuery] = useState(false);
@@ -31,10 +33,26 @@ const UserPage = ({ user }) => {
   // handle adding a new color
   const handleSubmit = (event) => {
     event.preventDefault();
-    // TODO: add new color
-    // TODO: Check that it is a color
+    const color = event.target.color.value;
 
-    setColors([...colors, event.target.color.value]);
+    // check if it is a color
+    let colorClass;
+    try {
+      // save as a color class, hex value.
+      colorClass = Color(color).hex();
+      console.log('TCL: -------------------------------------------');
+      console.log('TCL: handleSubmit -> colorClass', colorClass);
+      console.log('TCL: -------------------------------------------');
+    } catch (exception) {
+      console.log(exception);
+      // return if it isnt a color
+      return;
+    }
+
+
+    // TODO: add new color
+
+    setColors([...colors, colorClass]);
     event.target.color.value = '';
   };
 
