@@ -21,6 +21,7 @@
         "express": "^4.17.1",
         "helmet": "^3.21.2",
         "mongoose": "^5.7.6",
+        "morgan": "^1.9.1",
         "react": "16.11.0",
         "react-dom": "16.11.0",
         "react-router-dom": "^5.1.2"
