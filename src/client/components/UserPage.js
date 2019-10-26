@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import ColorBox from './ColorBox';
+import Notification from './Notification';
 
 import userService from '../services/userService';
 import colorService from '../services/colorService';
@@ -70,18 +71,22 @@ const UserPage = ({ user }) => {
   };
 
   return (
-    <div style={parent} className="container">
+    <div>
+      <Notification />
+      <div style={parent} className="container">
 
-      <h3>{user}</h3>
+        <h3>{user}</h3>
 
-      {hasMadeQuery ? <ColorBox colors={colors} /> : (<CircularProgress />)}
+        {hasMadeQuery ? <ColorBox colors={colors} /> : (<CircularProgress />)}
 
-      <form className="color-input" onSubmit={handleSubmit}>
-        <TextField type="text" name="color" label="Color" id="color-input" />
-        <Button type="submit" variant="outlined">Add</Button>
-      </form>
+        <form className="color-input" onSubmit={handleSubmit}>
+          <TextField type="text" name="color" label="Color" id="color-input" />
+          <Button type="submit" variant="outlined">Add</Button>
+        </form>
 
+      </div>
     </div>
+
   );
 };
 
