@@ -15,6 +15,9 @@ const Color = require('color');
 const UserPage = ({ user }) => {
   const [colors, setColors] = useState([]);
   const [hasMadeQuery, setHasMadeQuery] = useState(false);
+  const [notification, setNotification] = useState({
+    isSuccess: null, show: null, message: null
+  });
 
   // get colors for user
   useEffect(() => {
@@ -61,7 +64,6 @@ const UserPage = ({ user }) => {
       return;
     }
 
-    // TODO: add new color
     // update colors locally
     setColors([...colors, colorClass]);
     event.target.color.value = '';
@@ -72,12 +74,12 @@ const UserPage = ({ user }) => {
 
   return (
     <div>
-      <Notification />
+      <Notification notification={notification} />
       <div style={parent} className="container">
 
         <h3>{user}</h3>
 
-        {hasMadeQuery ? <ColorBox colors={colors} /> : (<CircularProgress />)}
+        {hasMadeQuery ? <ColorBox setNotification={setNotification} colors={colors} /> : (<CircularProgress />)}
 
         <form className="color-input" onSubmit={handleSubmit}>
           <TextField type="text" name="color" label="Color" id="color-input" />

@@ -1,19 +1,29 @@
 import React from 'react';
 
-const Notification = () => {
-  console.log('notification');
+const Notification = ({ notification }) => {
+  console.log(notification);
 
   // override CSS
-  const style = {
-
+  const successStyle = {
+    color: '#270',
+    backgroundColor: '#DFF2BF'
   };
 
-  return (
-    <div className="notification">
-      <i className="fa fa-check icon-margin" />
-         Hello from notification
-    </div>
-  );
+  const errorStyle = {
+    color: '#D8000C',
+    backgroundColor: '#FFBABA'
+  };
+
+  if (notification.show) {
+    return (
+      <div style={notification.isSuccess ? successStyle : errorStyle} className="notification">
+        {notification.isSuccess ? <i className="fa fa-check icon-margin" /> : <i className="fa fa-times-circle icon-margin" />}
+        {notification.message ? notification.message : 'hello from notification'}
+      </div>
+    );
+  }
+
+  return null;
 };
 
 export default Notification;

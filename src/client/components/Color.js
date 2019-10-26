@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const ColorClass = require('color');
 
 
-const Color = ({ color }) => {
+const Color = ({ color, setNotification }) => {
   // get class for color
   const colorClass = ColorClass(color);
 
@@ -27,6 +27,12 @@ const Color = ({ color }) => {
 
     // copy to clipboard
     navigator.clipboard.writeText(color);
+
+    // add notification
+    setNotification({ isSuccess: true, show: true, message: `Copied ${color}` });
+    setTimeout(() => {
+      setNotification({ isSuccess: null, show: false, message: null });
+    }, 5000);
   };
 
   // handle right click

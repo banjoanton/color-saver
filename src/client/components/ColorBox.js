@@ -3,14 +3,14 @@ import React from 'react';
 import Color from './Color';
 
 
-const ColorBox = ({ colors }) => {
+const ColorBox = ({ colors, setNotification }) => {
   console.log('TCL: -------------------------------');
   console.log('TCL: ColorBox -> colors', colors);
   console.log('TCL: -------------------------------');
 
   // turn all colors to html elements
   const allColors = colors.map((color, index) => (
-    <Color key={index} color={color} />
+    <Color setNotification={setNotification} key={index} color={color} />
   ));
 
 
