@@ -29,10 +29,16 @@ const Color = ({ color }) => {
     navigator.clipboard.writeText(color);
   };
 
+  // handle right click
+  const handleRightClick = (event) => {
+    event.preventDefault();
+    console.log('right click');
+  };
+
 
   return (
-    <ColorButton role="presentation" onClick={handleClick} className="color">
-      <p id="in-color-text">COPY</p>
+    <ColorButton role="presentation" onContextMenu={handleRightClick} onClick={handleClick} className="color">
+      {/* <p id="in-color-text">COPY / REMOVE</p> */}
     </ColorButton>
   );
 };
