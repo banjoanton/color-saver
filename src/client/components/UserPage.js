@@ -53,14 +53,34 @@ const UserPage = ({ user }) => {
     event.preventDefault();
     const color = event.target.color.value;
 
+    // return if color is empty
+    if (color === '') {
+      return;
+    }
+
     // check if it is a color
     let colorClass;
     try {
       // save as a color class, hex value.
       colorClass = Color(color).hex();
     } catch (exception) {
-      console.log(exception);
+      // show notification for not a valid color
+      setNotification({ isSuccess: false, show: true, message: 'Not a valid color' });
+      setTimeout(() => {
+        setNotification({ isSuccess: null, show: false, message: null });
+      }, 2000);
       // return if it isnt a color. Will not proceed below.
+      return;
+    }
+
+    // return if color already exists
+    if (colors.includes(colorClass)) {
+      setNotification({ isSuccess: false, show: true, message: 'Color already added' });
+      setTimeout(() => {
+        setNotification({ isSuccess: null, show: false, message: null });
+      }, 2000);
+
+      event.target.color.value = '';
       return;
     }
 
@@ -69,7 +89,14 @@ const UserPage = ({ user }) => {
     event.target.color.value = '';
 
     // add to database
-    colorService.addColor(colorClass, user);
+    try {
+      colorService.addColor(colorClass, user);
+    } catch (error) {
+      setNotification({ isSuccess: false, show: true, message: 'Could not add color to database' });
+      setTimeout(() => {
+        setNotification({ isSuccess: null, show: false, message: null });
+      }, 2000);
+    }
   };
 
   return (

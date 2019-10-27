@@ -28,11 +28,11 @@ const Color = ({ color, setNotification }) => {
     // copy to clipboard
     navigator.clipboard.writeText(color);
 
-    // add notification
+    // add copy notification
     setNotification({ isSuccess: true, show: true, message: `Copied ${color}` });
     setTimeout(() => {
       setNotification({ isSuccess: null, show: false, message: null });
-    }, 5000);
+    }, 2000);
   };
 
   // handle right click
