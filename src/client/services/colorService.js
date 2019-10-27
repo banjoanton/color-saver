@@ -7,4 +7,9 @@ const addColor = async (color, user) => {
   return request.data;
 };
 
-export default { addColor };
+const removeColor = async (color, user) => {
+  const request = await axios.put(`/api/users/${user}`, { user, color });
+  return request.data;
+};
+
+export default { addColor, removeColor };

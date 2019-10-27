@@ -47,4 +47,18 @@ colorRouter.get('/colors', async (request, response, next) => {
   }
 });
 
+colorRouter.put('/users/:user', async (request, response, next) => {
+  const { body } = request;
+  const { user } = request.params;
+
+  try {
+    const downloadedUser = await User.findOne({ user });
+    const userID = downloadedUser._id;
+    const deletedColor = await Color.findOneAndDelete({ color: body.color, user: userID });
+    response.json(deletedColor);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = colorRouter;

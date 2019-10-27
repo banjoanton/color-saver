@@ -24,9 +24,6 @@ const UserPage = ({ user }) => {
     async function fetchData() {
       // get all users
       const allUsers = await userService.getUsers();
-      console.log('TCL: ------------------------------------');
-      console.log('TCL: fetchData -> allUsers', allUsers);
-      console.log('TCL: ------------------------------------');
 
       // if user does not exist, leave colors empty
       if (!allUsers.map((u) => u.user).includes(user)) {
@@ -69,6 +66,7 @@ const UserPage = ({ user }) => {
       setTimeout(() => {
         setNotification({ isSuccess: null, show: false, message: null });
       }, 2000);
+
       // return if it isnt a color. Will not proceed below.
       return;
     }
@@ -106,7 +104,7 @@ const UserPage = ({ user }) => {
 
         <h3>{user}</h3>
 
-        {hasMadeQuery ? <ColorBox setNotification={setNotification} colors={colors} /> : (<CircularProgress />)}
+        {hasMadeQuery ? <ColorBox user={user} setNotification={setNotification} setColors={setColors} colors={colors} /> : (<CircularProgress />)}
 
         <form className="color-input" onSubmit={handleSubmit}>
           <TextField type="text" name="color" label="Color" id="color-input" />
