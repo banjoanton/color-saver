@@ -4,7 +4,7 @@ import Color from './Color';
 
 
 const ColorBox = ({
- colors, setNotification, setColors, user
+  colors, setNotification, setColors, user
 }) => {
   // turn all colors to html elements
   const allColors = colors.map((color, index) => (
@@ -14,7 +14,7 @@ const ColorBox = ({
 
   // return this if no colors for the user
   if (colors.length === 0) {
-    return (<div>no colors found</div>);
+    return (<div className="standard-font">no colors added</div>);
   }
 
   // return box with all colors if there are colors

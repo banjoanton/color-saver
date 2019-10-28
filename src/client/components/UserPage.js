@@ -48,7 +48,7 @@ const UserPage = ({ user }) => {
   // handle adding a new color
   const handleSubmit = (event) => {
     event.preventDefault();
-    const color = event.target.color.value;
+    const color = event.target.color.value.toLowerCase();
 
     // return if color is empty
     if (color === '') {
