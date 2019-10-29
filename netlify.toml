@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
-  publish="color-saver/dist"
-  base = "color-saver/"
+  publish="/dist"
+  base = "/"
 
 [[redirects]]
   from = "/*"
