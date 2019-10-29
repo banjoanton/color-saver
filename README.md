@@ -11,24 +11,30 @@
   </p>
 </p>
 
-- [About](#about)
-  - [Built with](#built-with)
-- [Download and run](#download-and-run)
-- [Features](#features)
-- [Contributing](#contributing)
-
-## About
 ![ColorSaver Web Demo](./assets/webpage-demo.png)
 
 ColorSaver is a temporary color saver. Save your favorite colors on a unique domain that you can access from anywhere. Much like temporary email services.
 
-### Built with
-* React.js
-* Express
-* Webpack
-* MongoDB
+## Table of Contents
+- [Features](#heavy_check_mark-features)
+- [Built with](#clipboard-built-with)
+- [Installation](#cloud-installation)
+- [Contributing](#wrench-contributing)
 
-## Download and run
+# :heavy_check_mark: Features
+
+* **Save:** Save your favorite colors online
+* **Access:** Access your domain and colors from anywhere
+* **Copy:** Click to copy
+* **Delete:** Right click to remove
+
+# :clipboard: Built with
+* **React.js**
+* **Express**
+* **Webpack**
+* **MongoDB**
+
+# :cloud: Download and run
 
 ```bash
 # Clone repository
@@ -43,13 +49,7 @@ $ npm install
 # Run locally
 $ npm run dev
 ```
-## Features
-
-* Save your favorite colors online
-* Access your domain and colors from anywhere
-* Click to copy
-* Right click to remove
 
 
-## Contributing
+# :wrench: Contributing
 Pull requests are welcome.
