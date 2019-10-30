@@ -1,7 +1,7 @@
 <p align="center">
 
   <a href="https://github.com/banjoanton/react-fullstack-template">
-    <img src="https://hotemoji.com/images/dl/9/rocket-emoji-by-twitter.png" alt="Logo" width="150" height="150">
+    <img src="https://emojis.wiki/emoji-pics/microsoft/artist-palette-microsoft.png" alt="Logo" width="150" height="150">
   </a>
   <h1 align="center">Color Saver</h1>
 
@@ -13,13 +13,18 @@
 
 ![ColorSaver Web Demo](./assets/webpage-demo.png)
 
-ColorSaver is a temporary color saver. Save your favorite colors on a unique domain that you can access from anywhere. Much like temporary email services.
+Color Saver is a temporary color saver. Save your favorite colors on a unique domain that you can access from anywhere. Much like temporary email services.
 
 ## Table of Contents
+- [Demo](#art-demo)
 - [Features](#heavy_check_mark-features)
 - [Built with](#clipboard-built-with)
-- [Installation](#cloud-installation)
+- [Download and run](#cloud-download-and-run)
 - [Contributing](#wrench-contributing)
+
+# :art: Demo
+Access a live demo [here](https://colorsaver.herokuapp.com).
+
 
 # :heavy_check_mark: Features
 
