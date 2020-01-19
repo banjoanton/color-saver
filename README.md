@@ -11,7 +11,7 @@
   </p>
 </p>
 
-![ColorSaver Web Demo](./assets/webpage-demo.png)
+![ColorSaver Web Demo](./assets/webpage-demo-styled.png)
 
 Color Saver is a temporary color saver. Save your favorite colors on a unique domain that you can access from anywhere. Much like temporary email services.
 
