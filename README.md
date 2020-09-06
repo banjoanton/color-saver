@@ -1,6 +1,6 @@
 <p align="center">
 
-  <a href="https://github.com/banjoanton/react-fullstack-template">
+  <a href="https://github.com/banjoanton/color-saver">
     <img src="https://emojis.wiki/emoji-pics/microsoft/artist-palette-microsoft.png" alt="Logo" width="150" height="150">
   </a>
   <h1 align="center">Color Saver</h1>
